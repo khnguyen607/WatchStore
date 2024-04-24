@@ -131,17 +131,22 @@ class Helper {
     return null;
   }
 
-  static async getLink(link) {
+  static backendLink = null;
+
+  static async fetchBackendLink() {
     try {
       const response = await fetch("../conf.json");
       const data = await response.json();
-      // console.log(data.backend + "www/" + link);
-      return data.backend + "www/" + link;
+      this.backendLink = data.backend;
     } catch (error) {
       console.error("Error:", error);
-      return null; // Trả về giá trị mặc định khi có lỗi
+      this.backendLink = null;
     }
-  }  
+  }
+
+  static getLink(link) {
+    return this.backendLink ? this.backendLink + "www/" + link : null;
+  }
   
 }
 

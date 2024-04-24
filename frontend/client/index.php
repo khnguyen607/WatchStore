@@ -12,7 +12,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
 
     <!-- CSS
-	============================================ -->
+    ============================================ -->
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
@@ -35,26 +35,50 @@
 
 </head>
 
+<!-- effice fadeIn start -->
+<style>
+    /* Đặt opacity của phần tử là 0 ban đầu */
+    section.main {
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        /* Thêm transition để tạo hiệu ứng mượt mà */
+    }
+
+    section.main.show {
+        opacity: 1;
+        /* Khi được thêm lớp .show, opacity sẽ chuyển sang 1 */
+    }
+</style>
+<script>
+    // Đợi 1 giây trước khi thêm lớp .show
+    setTimeout(function () {
+        document.querySelector('section.main').classList.add('show');
+    }, 100);
+</script>
+<!-- effice fadeIn end -->
+
 <body>
 
     <div class="main-wrapper">
 
         <header class="header"></header>
 
-        <?php
-        // Xác định router và trang cần được tải
-        $page = isset($_GET['page']) ? $_GET['page'] : 'home';
+        <section class="main">
+            <?php
+            // Xác định router và trang cần được tải
+            $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
-        // Kiểm tra xem trang có tồn tại hay không
-        $page_path = "pages/$page/$page";
-        if (file_exists("$page_path.html")) {
-            // Tải tệp HTML tương ứng
-            include_once("$page_path.html");
-        } else {
-            // Trang không tồn tại, xử lý bằng cách hiển thị trang 404 hoặc trang mặc định khác
-            include_once("shared/components/error404.html");
-        }
-        ?>
+            // Kiểm tra xem trang có tồn tại hay không
+            $page_path = "pages/$page/$page";
+            if (file_exists("$page_path.html")) {
+                // Tải tệp HTML tương ứng
+                include_once ("$page_path.html");
+            } else {
+                // Trang không tồn tại, xử lý bằng cách hiển thị trang 404 hoặc trang mặc định khác
+                include_once ("shared/components/error404.html");
+            }
+            ?>
+        </section>
 
         <!-- footer Start -->
         <footer class="footer"></footer>
@@ -67,7 +91,7 @@
 ============================================ -->
     <?php
     echo "<script src='$page_path.js'></script>"
-    ?>
+        ?>
 
     <!-- Modernizer JS -->
     <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
