@@ -2,27 +2,33 @@
 class CartManager {
   // Cập nhật hiển thị giỏ hàng
   static show() {
-    if (sessionStorage.getItem("cart") === null) return;
-
-    document.querySelectorAll("._cartQuantity").forEach((item) => {
-      item.textContent = Object.keys(this.getItem()).length;
-    });
-    var cartList = document.querySelector("._cartOffcanvas");
+    if (sessionStorage.getItem("cart") == null) {
+      document.querySelector(".shopping-cart-wrap .mini-cart").classList.add('d-none')
+      return;
+    } else {
+      document.querySelector(".shopping-cart-wrap .mini-cart").classList.remove('d-none')
+    }
+    document
+      .querySelectorAll(".shopping-cart-wrap .cart-total")
+      .forEach((item) => {
+        item.textContent = Object.keys(this.getItem()).length;
+      });
+    var cartList = document.querySelector("._cartProductList");
     var cartProduct = cartList
-      .querySelector(".prdc_ctg_product_content")
+      .querySelector("._cartProductList li.cart-item")
       .cloneNode(true);
     cartList.innerHTML = "";
     var items = this.getItem();
     var _totalPriceCart = 0;
     Object.keys(items).forEach((item) => {
       var cloneCartProduct = cartProduct.cloneNode(true);
-      cloneCartProduct.querySelector("h5").textContent = item;
+      cloneCartProduct.querySelector("h4").textContent = item;
       var item = items[item];
       cloneCartProduct.querySelector("img").src = Helper.getLink(item.Img);
-      cloneCartProduct.querySelector(".sale_price").textContent =
+      cloneCartProduct.querySelector(".price-box .new-price").textContent =
         (parseInt(item.Price) * 1000).toLocaleString("vi-VN") + "₫";
-      cloneCartProduct.querySelector("._quantity").textContent =
-        "x " + parseInt(item.Quantity);
+      cloneCartProduct.querySelector(".quantity").textContent =
+        parseInt(item.Quantity) + " x";
       _totalPriceCart += parseInt(item.Price) * parseInt(item.Quantity) * 1000;
       cartList.appendChild(cloneCartProduct);
     });
@@ -147,6 +153,4 @@ class Helper {
   static getLink(link) {
     return this.backendLink ? this.backendLink + "www/" + link : null;
   }
-  
 }
-

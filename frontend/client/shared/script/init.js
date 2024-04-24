@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Đặt các layouts
     await _getLayouts()
     // Hiển thị sản phẩm đang có trong cart
-    // CartManager.show()
+    CartManager.show()
 })
 
 async function _getLayouts() {

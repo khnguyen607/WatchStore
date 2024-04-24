@@ -1,7 +1,7 @@
 <header class="header">
   <!-- Header Top Start -->
   <div
-    class="header-top-area d-none d-lg-block text-color-white bg-gren border-bm-1"
+    class="header-top-area d-lg-block text-color-white bg-gren border-bm-1"
   >
     <div class="container">
       <div class="row">
@@ -40,20 +40,18 @@
   <!-- Header Top End -->
 
   <!-- haeader Mid Start -->
-  <div class="haeader-mid-area bg-gren border-bm-1 d-none d-lg-block">
+  <div class="haeader-mid-area bg-gren border-bm-1 d-lg-block">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-3 col-md-4 col-5">
           <div class="logo-area">
-            <a href="./"
-              ><img src="assets/images/logo/logo.png" alt=""
-            /></a>
+            <a href="./"><img src="assets/images/logo/logo.png" alt="" /></a>
           </div>
         </div>
         <div class="col-lg-6">
           <div class="search-box-wrapper">
             <div class="search-box-inner-wrap">
-              <form class="search-box-inner">
+              <form class="search-box-inner" action="./?page=products">
                 <!-- <div class="search-select-box">
                   <select class="nice-select">
                     <optgroup label=" Watch">
@@ -71,10 +69,11 @@
                     type="text"
                     class="search-field"
                     placeholder="Tìm kiếm sản phẩm..."
+                    name="q"
                   />
-
+                  <input type="text" value="products" name="page" class="d-none">
                   <div class="search-btn">
-                    <button><i class="icon-magnifier"></i></button>
+                    <button type="submit"><i class="icon-magnifier"></i></button>
                   </div>
                 </div>
               </form>
@@ -86,55 +85,38 @@
             <div class="shopping-cart-wrap">
               <a href="#"
                 ><i class="icon-basket-loaded"></i
-                ><span class="cart-total">2</span></a
+                ><span class="cart-total">0</span></a
               >
               <ul class="mini-cart">
-                <li class="cart-item">
-                  <div class="cart-image">
-                    <a href="product-details.html"
-                      ><img alt="" src="assets/images/product/product-02.png"
-                    /></a>
-                  </div>
-                  <div class="cart-title">
-                    <a href="product-details.html">
-                      <h4>Product Name 01</h4>
-                    </a>
-                    <div class="quanti-price-wrap">
-                      <span class="quantity">1 ×</span>
-                      <div class="price-box">
-                        <span class="new-price">$130.00</span>
-                      </div>
+
+                <div class="_cartProductList">
+                  <li class="cart-item">
+                    <div class="cart-image">
+                      <a href="product-details.html"
+                        ><img alt="" src="assets/images/product/product-02.png"
+                      /></a>
                     </div>
-                    <a class="remove_from_cart" href="#"
-                      ><i class="icon_close"></i
-                    ></a>
-                  </div>
-                </li>
-                <li class="cart-item">
-                  <div class="cart-image">
-                    <a href="product-details.html"
-                      ><img alt="" src="assets/images/product/product-03.png"
-                    /></a>
-                  </div>
-                  <div class="cart-title">
-                    <a href="product-details.html">
-                      <h4>Product Name 03</h4>
-                    </a>
-                    <div class="quanti-price-wrap">
-                      <span class="quantity">1 ×</span>
-                      <div class="price-box">
-                        <span class="new-price">$130.00</span>
+                    <div class="cart-title">
+                      <a href="product-details.html">
+                        <h4>Chưa thêm sản phẩm</h4>
+                      </a>
+                      <div class="quanti-price-wrap">
+                        <span class="quantity"></span>
+                        <div class="price-box">
+                          <span class="new-price">$130.00</span>
+                        </div>
                       </div>
+                      <a class="remove_from_cart" href="#"
+                        ><i class="fa fa-times"></i
+                      ></a>
                     </div>
-                    <a class="remove_from_cart" href="#"
-                      ><i class="icon-trash icons"></i
-                    ></a>
-                  </div>
-                </li>
+                  </li>
+                </div>
+
                 <li class="subtotal-box">
                   <div class="subtotal-title">
                     <h3>Sub-Total :</h3>
-                    <span>$ 260.99</span>
+                    <span class="_totalPriceCart">$ 260.99</span>
                   </div>
                 </li>
                 <li class="mini-cart-btns">
@@ -156,7 +138,7 @@
   <div class="haeader-bottom-area bg-gren header-sticky">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-lg-12 d-none d-lg-block">
+        <div class="col d-lg-block">
           <div class="main-menu-area white_text">
             <!--  Start Mainmenu Nav-->
             <nav class="main-navigation text-center">
@@ -168,101 +150,13 @@
                 <li>
                   <a href="./?page=products">Cửa hàng</a>
                 </li>
-                <li><a href="./?page=about">About Us</a></li>
-                <li><a href="./?page=contact">Contact</a></li>
+                <li><a href="./?page=about">Về chúng tôi</a></li>
+                <li><a href="./?page=contact">Liên hệ</a></li>
               </ul>
             </nav>
           </div>
         </div>
 
-        <div class="col-5 col-md-6 d-block d-lg-none">
-          <div class="logo">
-            <a href="index.html"
-              ><img src="assets/images/logo/logo.png" alt=""
-            /></a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-7 d-block d-lg-none">
-          <div class="right-blok-box text-white d-flex">
-            <div class="user-wrap">
-              <a href="wishlist.html"
-                ><span class="cart-total">2</span> <i class="icon-heart"></i
-              ></a>
-            </div>
-
-            <div class="shopping-cart-wrap">
-              <a href="#"
-                ><i class="icon-basket-loaded"></i
-                ><span class="cart-total">2</span></a
-              >
-              <ul class="mini-cart">
-                <li class="cart-item">
-                  <div class="cart-image">
-                    <a href="product-details.html"
-                      ><img alt="" src="assets/images/product/product-02.png"
-                    /></a>
-                  </div>
-                  <div class="cart-title">
-                    <a href="product-details.html">
-                      <h4>Product Name 01</h4>
-                    </a>
-                    <div class="quanti-price-wrap">
-                      <span class="quantity">1 ×</span>
-                      <div class="price-box">
-                        <span class="new-price">$130.00</span>
-                      </div>
-                    </div>
-                    <a class="remove_from_cart" href="#"
-                      ><i class="fa fa-times"></i
-                    ></a>
-                  </div>
-                </li>
-                <li class="cart-item">
-                  <div class="cart-image">
-                    <a href="product-details.html"
-                      ><img alt="" src="assets/images/product/product-03.png"
-                    /></a>
-                  </div>
-                  <div class="cart-title">
-                    <a href="product-details.html">
-                      <h4>Product Name 03</h4>
-                    </a>
-                    <div class="quanti-price-wrap">
-                      <span class="quantity">1 ×</span>
-                      <div class="price-box">
-                        <span class="new-price">$130.00</span>
-                      </div>
-                    </div>
-                    <a class="remove_from_cart" href="#"
-                      ><i class="icon-trash icons"></i
-                    ></a>
-                  </div>
-                </li>
-                <li class="subtotal-box">
-                  <div class="subtotal-title">
-                    <h3>Sub-Total :</h3>
-                    <span>$ 260.99</span>
-                  </div>
-                </li>
-                <li class="mini-cart-btns">
-                  <div class="cart-btns">
-                    <a href="cart.html">View cart</a>
-                    <a href="checkout.html">Checkout</a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            <div class="mobile-menu-btn d-block d-lg-none">
-              <div class="off-canvas-btn">
-                <a href="#"
-                  ><img src="assets/images/icon/bg-menu.png" alt=""
-                /></a>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
