@@ -48,10 +48,10 @@ class UserController extends BaseController
         if ($this->model->checkuser_name($data['UserName'])) {
             $this->model->mInsert($data);
             echo "true";
-            header("Location: ../frontend/client/?signupSuccfully=true");
+            header("Location: ../frontend/client/?page=login&signupSuccfully=true");
         } else {
             echo "false";
-            header("Location: ../frontend/client/?signupFailed=true");
+            header("Location: ../frontend/client/?page=login&signupFailed=true");
         }
     }
 

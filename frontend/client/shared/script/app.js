@@ -73,6 +73,16 @@ class CartManager {
   static clear() {
     sessionStorage.removeItem("cart");
   }
+
+  // Phương thức để thêm hoặc cập nhật một giá trị vào sessionStorage
+  static delItem(key) {
+    // Lấy danh sách mục từ sessionStorage
+    var items = this.getItem();
+    delete items[key]
+    // Lưu danh sách đã được cập nhật vào sessionStorage
+    sessionStorage.setItem("cart", JSON.stringify(items));
+  }
+
 }
 
 // Hàm dùng chung

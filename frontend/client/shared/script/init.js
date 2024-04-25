@@ -1,11 +1,11 @@
 
 document.addEventListener('DOMContentLoaded', async () => {
     await Helper.fetchBackendLink();
-    console.log(Helper.backendLink);
     // Đặt các layouts
     await _getLayouts()
     // Hiển thị sản phẩm đang có trong cart
     CartManager.show()
+    _showMyaccount()
 })
 
 async function _getLayouts() {
@@ -19,5 +19,13 @@ async function _getLayouts() {
         document.querySelector("footer.footer").innerHTML = components.querySelector("footer.footer").innerHTML;
     } catch (error) {
         console.error('Error loading HTML:', error);
+    }
+}
+
+async function _showMyaccount() {
+    if (Helper.getCookie("user_id")) {
+        document.querySelector(".my-account-container a[href='./?page=login']").classList.add("d-none")
+    } else {
+        document.querySelector(".my-account-container a[href='./?page=myAccount']").classList.add("d-none")
     }
 }

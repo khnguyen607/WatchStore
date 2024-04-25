@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         let items = await CartManager.getItem();
         CartManager.clear();
         document.querySelectorAll(".table.table tbody tr").forEach(item=>{
-            console.log(item.querySelector(".plantmore-product-quantity input").value);
             items[item.querySelector(".plantmore-product-name a").textContent]["Quantity"] = parseInt(item.querySelector(".plantmore-product-quantity input").value)
             CartManager.setItem(item.querySelector(".plantmore-product-name a").textContent, items[item.querySelector(".plantmore-product-name a").textContent])
         })
@@ -25,6 +24,13 @@ async function _init() {
     Object.keys(items).forEach(item => {
         var cloneCartProduct = cartProduct.cloneNode(true)
         cloneCartProduct.querySelector(".plantmore-product-name a").textContent = item
+        var itemName = item
+        cloneCartProduct.querySelector(".plantmore-product-remove a").addEventListener('click', (evt)=>{
+            evt.preventDefault()
+            CartManager.delItem(itemName)
+            window.location.reload()
+            alert('Xóa thành công sản phẩm: '+itemName)
+        })
         item = items[item]
         cloneCartProduct.querySelector("img").src = Helper.getLink(item.Img)
         cloneCartProduct.querySelector(".plantmore-product-price span").textContent = (item.Price * 1000).toLocaleString("vi-VN") + "₫"
