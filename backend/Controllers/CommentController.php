@@ -1,13 +1,13 @@
 <?php
 
-class NutritionalController extends BaseController
+class CommentController extends BaseController
 {
     private $model;
 
     public function __construct()
     {
-        $this->loadModel('NutritionalModel');
-        $this->model = new NutritionalModel;
+        $this->loadModel('CommentModel');
+        $this->model = new CommentModel;
     }
 
     public function index()
@@ -31,9 +31,10 @@ class NutritionalController extends BaseController
     public function insert()
     {
         $data = [
-            'Name'      => $_POST['Name']
+            'userID'      => $_POST['userID'],
+            'productID'      => $_POST['productID'],
+            'Content'      => $_POST['Content'],
         ];
-
         $this->model->mInsert($data);
         echo "true";
     }

@@ -36,22 +36,21 @@ class UserController extends BaseController
             'UserName'  => $_POST['UserName'],
             'Password'  => $_POST['Password'],
         ];
-        if (isset($_POST['Tier']) && isset($_POST['Role'])) {
-            $data['Tier'] = $_POST['Tier'];
-            $data['Role'] = $_POST['Role'] == "Admin" ? 1 : 0;
-        }
-        if (isset($_POST['Email']) && isset($_POST['Address']) && isset($_POST['Phone'])) {
+        if (isset($_POST['Email']) && isset($_POST['Role'])) {
+            $data['Role'] = $_POST['Role'];
             $data['Email'] = $_POST['Email'];
+        }
+        if (isset($_POST['Address']) && isset($_POST['Phone'])) {
             $data['Address'] = $_POST['Address'];
             $data['Phone'] = $_POST['Phone'];
         }
         if ($this->model->checkuser_name($data['UserName'])) {
             $this->model->mInsert($data);
             echo "true";
-            header("Location: ../frontend/client/?page=login&signupSuccfully=true");
+            if(!isset($_POST['Role'])) header("Location: ../frontend/client/?page=login&signupSuccfully=true");
         } else {
             echo "false";
-            header("Location: ../frontend/client/?page=login&signupFailed=true");
+            if(!isset($_POST['Role'])) header("Location: ../frontend/client/?page=login&signupFailed=true");
         }
     }
 
@@ -86,7 +85,7 @@ class UserController extends BaseController
         if ($check) {
             header("Location: ../frontend/client/?loginSuccfully=true");
         } else {
-            header("Location: ../frontend/client/?loginFailed=true" . $data['UserName']);
+            header("Location: ../frontend/client/?page=login&loginFailed=" . $data['UserName']);
         }
     }
 

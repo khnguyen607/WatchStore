@@ -1,8 +1,8 @@
 <?php
 
-class NutritionalModel extends BaseModel
+class CommentModel extends BaseModel
 {
-    const TABLE = 'nutritionists';
+    const TABLE = 'comments';
 
     public function mAlls($select = ['*'])
     {

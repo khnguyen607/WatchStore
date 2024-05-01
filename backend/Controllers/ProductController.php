@@ -38,17 +38,7 @@ class ProductController extends BaseController
             'Description'  => $_POST['Description'],
             'Img'   => $this->saveFile()
         ];
-        $productID = $this->model->mInsert($data);
-
-        $selectedCategories = $_POST["Categories"];
-        foreach ($selectedCategories as $category) {
-            $this->model->insertCategory($productID, $category);
-        }
-
-        $nutritionistsData = json_decode($_POST["Nutritionists"], true);
-        foreach ($nutritionistsData as $nutritionalID => $value) {
-            $this->model->insertNutritional($productID, $nutritionalID, $value);
-        }
+        $this->model->mInsert($data);
         echo "true";
     }
 
@@ -62,7 +52,6 @@ class ProductController extends BaseController
             'capacity'  => $_POST['capacity'],
             'utility'   => $_POST['utility']
         ];
-        exit($data);
         $this->model->mUpdate($id, $data);
 
         header("Location: ../frontend/dashboard.html?tab=mgr__room");
@@ -71,27 +60,15 @@ class ProductController extends BaseController
     public function delete()
     {
         $id = $_GET['id'];
-        $data = [
-            'status' => '0'
-        ];
-        $this->model->mDelete($id, $data);
+        $this->model->mDelete($id);
         header("Location: ../frontend/dashboard.html?tab=mgr__room");
     }
 
 
-    public function nutritionalValue()
+    public function getComments()
     {
         $id = $_GET['id'];
-        $data = $this->model->mNutritionalValue($id);
-        // Trả về dữ liệu dưới dạng JSON
-        header('Content-Type: application/json');
-        echo json_encode($data);
-    }
-
-    public function getCategory()
-    {
-        $id = $_GET['id'];
-        $data = $this->model->mGetCategory($id);
+        $data = $this->model->mGetComments($id);
         // Trả về dữ liệu dưới dạng JSON
         header('Content-Type: application/json');
         echo json_encode($data);

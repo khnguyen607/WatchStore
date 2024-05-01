@@ -2,7 +2,7 @@
 class Database{
     private $host = 'localhost';
     private $user = 'root';
-    private $pass = 'Bill2412@@';
+    private $pass = '';
     private $database = 'watchStore';
     private $conn;
 

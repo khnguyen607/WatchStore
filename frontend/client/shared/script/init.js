@@ -1,6 +1,5 @@
 
 document.addEventListener('DOMContentLoaded', async () => {
-    await Helper.fetchBackendLink();
     // Đặt các layouts
     await _getLayouts()
     // Hiển thị sản phẩm đang có trong cart

@@ -44,6 +44,7 @@ async function showProducts(items) {
         cloneData.querySelector(".price-box .new-price").textContent = (item.Price * 1000).toLocaleString('vi-VN') + "₫"
         cloneData.querySelector(".product-thumb a").href = `./?page=productDetail&id=${item.ID}`
         cloneData.querySelector(".product-name a").href = `./?page=productDetail&id=${item.ID}`
+        console.log(Helper.getLink(item.Img));
         cloneData.querySelector(".product-thumb img").src = Helper.getLink(item.Img)
         cloneData.querySelector(".action-links a").addEventListener('click', (evt) => {
             evt.preventDefault()

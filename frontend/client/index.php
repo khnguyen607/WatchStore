@@ -50,6 +50,7 @@
     }
 </style>
 <script>
+    Helper.fetchBackendLink();
     // Đợi 1 giây trước khi thêm lớp .show
     setTimeout(function () {
         document.querySelector('section.main').classList.add('show');

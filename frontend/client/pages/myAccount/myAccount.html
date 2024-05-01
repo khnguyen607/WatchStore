@@ -5,8 +5,8 @@
       <div class="col-12">
         <!-- breadcrumb-list start -->
         <ul class="breadcrumb-list">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">My Account Page</li>
+          <li class="breadcrumb-item"><a href="./">Trang chủ</a></li>
+          <li class="breadcrumb-item active">Tài khoản của tôi</li>
         </ul>
         <!-- breadcrumb-list end -->
       </div>
@@ -26,25 +26,25 @@
               <div class="col-lg-3 col-md-12">
                 <div class="d-single-info">
                   <p class="user-name">Hello <span>Yourmail@info</span></p>
-                  <p>(not yourmail@info? <a href="#">Log Out</a>)</p>
+                  <!-- <p>(not yourmail@info? <a href="#">Log Out</a>)</p> -->
                 </div>
               </div>
               <div class="col-lg-4 col-md-12">
                 <div class="d-single-info">
-                  <p>Need Assistance? Customer service at.</p>
-                  <p>admin@devitems.com.</p>
+                  <p>Bạn cần hỗ trợ? Hãy liên hệ ngay với chúng tôi.</p>
+                  <!-- <p>admin@devitems.com.</p> -->
                 </div>
               </div>
               <div class="col-lg-3 col-md-12">
                 <div class="d-single-info">
-                  <p>E-mail them at</p>
+                  <p>Email liên lạc của chúng tôi</p>
                   <p>support@yoursite.com</p>
                 </div>
               </div>
               <div class="col-lg-2 col-md-12">
                 <div class="d-single-info text-lg-center">
-                  <a href="cart.html" class="view-cart"
-                    ><i class="fa fa-cart-plus"></i>view cart</a
+                  <a href="./?page=cart" class="view-cart"
+                    ><i class="fa fa-cart-plus"></i>Xem giỏ hàng</a
                   >
                 </div>
               </div>
@@ -59,7 +59,7 @@
                     href="#dashboard"
                     data-bs-toggle="tab"
                     class="nav-link active"
-                    >Dashboard</a
+                    >Quản lý</a
                   >
                 </li>
                 <li>
@@ -89,12 +89,9 @@
               <!-- Tab panes -->
               <div class="tab-content dashboard-content">
                 <div class="tab-pane active" id="dashboard">
-                  <h3>Dashboard</h3>
+                  <h3>Quản lý tài khoản</h3>
                   <p>
-                    From your account dashboard. you can easily check &amp; view
-                    your <a href="#">recent orders</a>, manage your
-                    <a href="#">shipping and billing addresses</a> and
-                    <a href="#">edit your password and account details.</a>
+                    Phần này sẽ trợ giúp bạn dễ dàng quản lý tài khoản của mình cũng như thay đổi nhưng thông tin cần thiết và tiện hơn trong quá trình theo dõi đơn hàng.
                   </p>
                 </div>
                 <div class="tab-pane fade" id="orders">
@@ -131,74 +128,45 @@
                 </div>
                 <div class="tab-pane" id="address">
                   <p>
-                    The following addresses will be used on the checkout page by
-                    default.
+                    Thiết lập địa chỉ giao hàng mặc định của bạn.
                   </p>
-                  <h4 class="billing-address">Billing address</h4>
-                  <a href="#" class="view">edit</a>
-                  <p class="biller-name">Johan Don</p>
-                  <p>Bangladesh</p>
+                  <input type="text" class="billing-address">
+                  <a href="#" class="view">Lưu</a>
+                  <!-- <p class="biller-name">Johan Don</p>
+                  <p>Bangladesh</p> -->
                 </div>
                 <div class="tab-pane fade" id="account-details">
-                  <h3>Account details</h3>
+                  <h3>Thiết lập tài khoản</h3>
                   <div class="login">
                     <div class="login-form-container">
                       <div class="account-login-form">
                         <form action="#">
-                          <p>
-                            Already have an account?
-                            <a href="#">Log in instead!</a>
-                          </p>
-                          <label>Social title</label>
-                          <div class="input-radio">
-                            <span class="custom-radio"
-                              ><input type="radio" value="1" name="id_gender" />
-                              Mr.</span
-                            >
-                            <span class="custom-radio"
-                              ><input type="radio" value="1" name="id_gender" />
-                              Mrs.</span
-                            >
-                          </div>
                           <div class="account-input-box">
-                            <label>First Name</label>
+                            <label>Số điện thoại</label>
                             <input type="text" name="first-name" />
-                            <label>Last Name</label>
-                            <input type="text" name="last-name" />
                             <label>Email</label>
                             <input type="text" name="email-name" />
-                            <label>Password</label>
+                          </div>
+                          <div class="custom-checkbox">
+                            <input type="checkbox" id="_btnChangePassword" onchange="_hideChangePassword()"/>
+                            <label for="_btnChangePassword">Đổi mật khẩu</label>
+                          </div>
+                          <div class="my-1 d-none" id="_changePassword">
+                            <label>Mật khẩu mới:</label>
                             <input type="password" name="user-password" />
-                            <label>Birthdate</label>
-                            <input
-                              type="text"
-                              placeholder="MM/DD/YYYY"
-                              value=""
-                              name="birthday"
-                            />
                           </div>
-                          <div class="example">(E.g.: 05/31/1970)</div>
-                          <div class="custom-checkbox">
-                            <input type="checkbox" value="1" name="optin" />
-                            <label>Receive offers from our partners</label>
-                          </div>
-                          <div class="custom-checkbox">
-                            <input
-                              type="checkbox"
-                              value="1"
-                              name="newsletter"
-                            />
-                            <label
-                              >Sign up for our newsletter<br /><em
-                                >You may unsubscribe at any moment. For that
-                                purpose, please find our contact info in the
-                                legal notice.</em
-                              ></label
-                            >
-                          </div>
+                          <script>
+                            function _hideChangePassword() {
+                              if(document.querySelector("#_btnChangePassword").checked){
+                                document.querySelector("#_changePassword").classList.remove('d-none')
+                              } else {
+                                document.querySelector("#_changePassword").classList.add('d-none')
+                              }
+                            }
+                          </script>
                           <div class="button-box">
                             <button class="btn default-btn" type="submit">
-                              Save
+                              Lưu
                             </button>
                           </div>
                         </form>
