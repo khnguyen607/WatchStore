@@ -35,11 +35,11 @@
 
 | Công việc chính       | Cụ thể  | Nơi làm việc   
 |-                      |-        |-  
-| **Xây dựng cơ sở dữ liệu** | Thiết kế csdl quan hệ giữa các bảng, các ràng buộc| PhpMyAdmin (sử dụng laragon hoặc xampp)
-| **Thiết kế giao diện** | Tìm giao diện trên mạng và cấu trúc nó lại cho phù hợp dự án | frontend/client; frontend/admin
-| **Xây dựng frontend** | Viết mã kiểm soát router(Chỉ định phần được load) và nhúng các component dùng chung (header, footer, giỏ hàng, đăng ký đăng nhập). Nó nằm ở file index.php của cả admin và client. Các component dùng chung thì nằm trong shared| frontend/admin/index.php; frontend/client/index.php; frontend/client/shared/scripts/init.js
-|                       | *Class Helper* (Đoạn mã dùng chung)và *Class CartManager*(Đoạn mã tương tác với giỏ hàng) trong phần shared/scripts/app.js. *thư mục shared nằm ở cả 2 phần admin và client*|frontend/admin/shared/scripts/app.js; frontend/client/shared/scripts/app.js
-| **Xây dựng backend**  | Cấu trúc của backend | Trong backend/: Core, BaseController.php, BaseModel.php, backend/index.php
-|                       | Dựa vào cấu trúc backend đã xây dựng viết các controller và model cần thiết để tương tác với database                | Các file còn lại trong Controllers/ và Models/
-| **Liên kết frontend và backend**| Sử dụng các api đã viết ở backend để nhúng vào giao diện | Các file *.js trong phần frontend/admin/pages        
+| **Xây dựng cơ sở dữ liệu** | **(Minh Hiếu)**Thiết kế csdl quan hệ giữa các bảng, các ràng buộc| PhpMyAdmin (sử dụng laragon hoặc xampp)
+| **Thiết kế giao diện** | **(Hoàng)**Tìm giao diện trên mạng và cấu trúc nó lại cho phù hợp dự án | frontend/client; frontend/admin
+| **Xây dựng frontend** | **(Thu hồng)** Viết mã kiểm soát router(Chỉ định phần được load) và nhúng các component dùng chung (header, footer, giỏ hàng, đăng ký đăng nhập). Nó nằm ở file index.php của cả admin và client. Các component dùng chung thì nằm trong shared| frontend/admin/index.php; frontend/client/index.php; frontend/client/shared/scripts/init.js
+|                       |**(Thu Huế)** *Class Helper* (Đoạn mã dùng chung)và *Class CartManager*(Đoạn mã tương tác với giỏ hàng) trong phần shared/scripts/app.js. *thư mục shared nằm ở cả 2 phần admin và client*|frontend/admin/shared/scripts/app.js; frontend/client/shared/scripts/app.js
+| **Xây dựng backend**  |**(Mạnh Hiếu)** Cấu trúc của backend | Trong backend/: Core, BaseController.php, BaseModel.php, backend/index.php
+|                       | **(Huyền)** Dựa vào cấu trúc backend đã xây dựng viết các controller và model cần thiết để tương tác với database                | Các file còn lại trong Controllers/ và Models/
+| **Liên kết frontend và backend**|**(Nam Hưng)** Sử dụng các api đã viết ở backend để nhúng vào giao diện | Các file *.js trong phần frontend/admin/pages        
 
