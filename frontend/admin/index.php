@@ -51,142 +51,136 @@
                 <!-- /preload -->
                 <!-- section-menu-left -->
                 <div class="section-menu-left">
-    <div class="box-logo">
-        <a href="./" id="site-logo-inner">
-            <img class id="logo_header" alt src="assets/images/logo/logo.png" data-light="assets/images/logo/logo.png"
-                data-dark="assets/images/logo/logo-dark.png">
-        </a>
-        <div class="button-show-hide">
-            <i class="icon-menu-left"></i>
-        </div>
-    </div>
-    <div class="center">
-        <div class="center-item">
-            <div class="center-heading">Main Home</div>
-            <ul class="menu-list">
-                <li class="menu-item active">
-                    <a href="./" class="menu-item-button active">
-                        <div class="icon">
-                            <i class="icon-grid"></i>
+                    <div class="box-logo">
+                        <a href="./" id="site-logo-inner">
+                            <img class id="logo_header" alt src="assets/images/logo/logo.png" data-light="assets/images/logo/logo.png" data-dark="assets/images/logo/logo-dark.png">
+                        </a>
+                        <div class="button-show-hide">
+                            <i class="icon-menu-left"></i>
                         </div>
-                        <div class="text">Dashboard</div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="center-item">
-            <div class="center-heading">All page</div>
-            <ul class="menu-list">
-                <li class="menu-item has-children">
-                    <a href="javascript:void(0);" class="menu-item-button">
-                        <div class="icon">
-                            <i class="icon-shopping-cart"></i>
+                    </div>
+                    <div class="center">
+                        <!-- <div class="center-item">
+                            <div class="center-heading">Main Home</div>
+                            <ul class="menu-list">
+                                <li class="menu-item _menuDashboard">
+                                    <a href="./" class="menu-item-button">
+                                        <div class="icon">
+                                            <i class="icon-grid"></i>
+                                        </div>
+                                        <div class="text">Dashboard</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div> -->
+                        <div class="center-item">
+                            <div class="center-heading">Trang quản trị</div>
+                            <ul class="menu-list">
+                                <li class="menu-item has-children">
+                                    <a href="javascript:void(0);" class="menu-item-button">
+                                        <div class="icon">
+                                            <i class="icon-shopping-cart"></i>
+                                        </div>
+                                        <div class="text">Sản phẩm</div>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu-item">
+                                            <a href="./?page=products">
+                                                <div class="text">Danh sách sản phẩm</div>
+                                            </a>
+                                        </li>
+                                        <li class="sub-menu-item">
+                                            <a href="./?page=productAdd">
+                                                <div class="text">Thêm sản phẩm</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item has-children">
+                                    <a href="javascript:void(0);" class="menu-item-button">
+                                        <div class="icon">
+                                            <i class="icon-file-plus"></i>
+                                        </div>
+                                        <div class="text">Đơn hàng</div>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu-item">
+                                            <a href="./?page=orders">
+                                                <div class="text">Danh sách đơn hàng</div>
+                                            </a>
+                                        </li>
+                                        <li class="sub-menu-item">
+                                            <a href="./?page=orderDetail" onclick="event.preventDefault()">
+                                                <div class="text">Chi tiết đơn</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item has-children">
+                                    <a href="javascript:void(0);" class="menu-item-button">
+                                        <div class="icon">
+                                            <i class="icon-user"></i>
+                                        </div>
+                                        <div class="text">Người dùng</div>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu-item">
+                                            <a href="./?page=users" class>
+                                                <div class="text">Tất cả người dùng</div>
+                                            </a>
+                                        </li>
+                                        <li class="sub-menu-item">
+                                            <a href="./?page=userAdd" class>
+                                                <div class="text">Thêm người dùng</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="text">Sản phẩm</div>
-                    </a>
-                    <ul class="sub-menu">
-                        <li class="sub-menu-item">
-                            <a href="./?page=productAdd" class>
-                                <div class="text">Thêm sản phẩm</div>
-                            </a>
-                        </li>
-                        <li class="sub-menu-item">
-                            <a href="./?page=products" class>
-                                <div class="text">Danh sách sản phẩm</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="menu-item has-children">
-                    <a href="javascript:void(0);" class="menu-item-button">
-                        <div class="icon">
-                            <i class="icon-file-plus"></i>
+                        <div class="center-item">
+                            <div class="center-heading">Liên hệ với chúng tôi</div>
+                            <ul class="wg-social">
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="active">
+                                    <a href="#">
+                                        <i class="icon-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="text">Đơn hàng</div>
-                    </a>
-                    <ul class="sub-menu">
-                        <li class="sub-menu-item">
-                            <a href="./?page=orders" class>
-                                <div class="text">Danh sách đơn hàng</div>
+                    </div>
+                    <div class="bot text-center">
+                        <div class="wrap">
+                            <div class="mb-20">
+                                <img src="assets/images/menu-left/img-bot.png" alt>
+                            </div>
+                            <div class="mb-20">
+                                <h6>Hi, how can we help?</h6>
+                                <div class="text">
+                                    Contact us if you have any assistance, we will contact you as soon as possible
+                                </div>
+                            </div>
+                            <a href="#" class="tf-button w-full">
+                                Contact
                             </a>
-                        </li>
-                        <li class="sub-menu-item">
-                            <a href="./?page=orderDetail" class>
-                                <div class="text">Chi tiết đơn</div>
-                            </a>
-                        </li>
-                        <li class="sub-menu-item">
-                            <a href="./?page=orderTracking" class>
-                                <div class="text">Theo dõi đơn</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="menu-item has-children">
-                    <a href="javascript:void(0);" class="menu-item-button">
-                        <div class="icon">
-                            <i class="icon-user"></i>
                         </div>
-                        <div class="text">Người dùng</div>
-                    </a>
-                    <ul class="sub-menu">
-                        <li class="sub-menu-item">
-                            <a href="./?page=users" class>
-                                <div class="text">Tất cả người dùng</div>
-                            </a>
-                        </li>
-                        <li class="sub-menu-item">
-                            <a href="./?page=userAdd" class>
-                                <div class="text">Thêm người dùng</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="center-item">
-            <div class="center-heading">Connect us</div>
-            <ul class="wg-social">
-                <li>
-                    <a href="#">
-                        <i class="icon-facebook"></i>
-                    </a>
-                </li>
-                <li class="active">
-                    <a href="#">
-                        <i class="icon-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="icon-linkedin"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="icon-instagram"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="bot text-center">
-        <div class="wrap">
-            <div class="mb-20">
-                <img src="assets/images/menu-left/img-bot.png" alt>
-            </div>
-            <div class="mb-20">
-                <h6>Hi, how can we help?</h6>
-                <div class="text">
-                    Contact us if you have any assistance, we will contact you as soon as possible
+                    </div>
                 </div>
-            </div>
-            <a href="#" class="tf-button w-full">
-                Contact
-            </a>
-        </div>
-    </div>
-</div>
                 <!-- /section-menu-left -->
                 <!-- section-content-right -->
                 <div class="section-content-right">
@@ -225,7 +219,7 @@
         Helper.fetchBackendLink()
     </script>
     <?php
-        echo "<script src='$page_path.js'></script>"
+    echo "<script src='$page_path.js'></script>"
     ?>
     <!-- Javascript -->
     <script src="assets/js/jquery.min.js"></script>
@@ -244,8 +238,5 @@
     <script src="assets/js/main.js"></script>
 
 </body>
-
-
-<!-- Mirrored from themesflat.co/html/remos/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Apr 2024 12:50:11 GMT -->
 
 </html>

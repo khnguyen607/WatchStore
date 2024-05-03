@@ -33,11 +33,11 @@
                 <form action="#">
                   <p class="coupon-input form-row-first">
                     <label>Tên đăng nhập <span class="required">*</span></label>
-                    <input type="text" name="email" />
+                    <input type="text" name="UserName" />
                   </p>
                   <p class="coupon-input form-row-last">
                     <label>Mật khẩu <span class="required">*</span></label>
-                    <input type="password" name="password" />
+                    <input type="password" name="Password" />
                   </p>
                   <div class="clear"></div>
                   <p>
@@ -80,31 +80,31 @@
         <div class="col-lg-6 col-md-6">
           <!-- billing-details-wrap start -->
           <div class="billing-details-wrap">
-            <form action="#">
+            <form action="#" id="_formCheckout">
               <h3 class="shoping-checkboxt-title">Chi tiết hóa đơn</h3>
               <div class="row">
                 <div class="col-lg-12">
                   <p class="single-form-row">
                     <label>Tên khách hàng <span class="required">*</span></label>
-                    <input type="text" name="First name" />
+                    <input type="text" name="GuestName" />
                   </p>
                 </div>
                 <div class="col-lg-12">
                   <p class="single-form-row">
                     <label>Địa chỉ <span class="required">*</span></label>
-                    <input type="text" placeholder="House number and street name" name="address" />
+                    <input type="text" placeholder="Nhập địa chỉ chi tiết" name="GuestAddress" />
                   </p>
                 </div>
                 <div class="col-lg-12">
                   <p class="single-form-row">
                     <label>Số điện thoại</label>
-                    <input type="text" name="address" />
+                    <input type="text" name="GuestPhone" />
                   </p>
                 </div>
                 <div class="col-lg-12">
                   <p class="single-form-row">
                     <label>Địa chỉ mail <span class="required">*</span></label>
-                    <input type="text" name="Email address " />
+                    <input type="text" name="GuestEmail" />
                   </p>
                 </div>
                 <!-- <div class="col-lg-12">
@@ -252,7 +252,7 @@
                     <tr class="order-total">
                       <th>Tổng hóa đơn</th>
                       <td>
-                        <strong><span class="amount">£215.00</span></strong>
+                        <strong><span class="amount total_price">£215.00</span></strong>
                       </td>
                     </tr>
                   </tfoot>
@@ -263,7 +263,7 @@
               <!-- your-order-wrap end -->
               <div class="payment-method">
                 <div class="order-button-payment">
-                  <input type="submit" value="Thanh toán" />
+                  <input type="submit" value="Thanh toán" class="_btnOrder"/>
                 </div>
               </div>
               <!-- your-order-wrapper start -->

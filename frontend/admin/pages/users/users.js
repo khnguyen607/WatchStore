@@ -21,6 +21,10 @@ async function showProducts(items) {
         cloneData.querySelector(".name a").textContent = item.Name
         cloneData.querySelector("._userUserName").textContent = item.UserName
         cloneData.querySelector("._userRole").textContent = item.Role == '0' ? "Khách" : "Admin"
+        cloneData.querySelector(".item.trash").addEventListener('click', () => {
+            cloneData.classList.add("d-none")
+            Helper.fetchData("user&action=delete&id="+item.ID)
+        })
         dataList.appendChild(cloneData)
     });
 }

@@ -102,4 +102,14 @@ class UserController extends BaseController
         header('Content-Type: application/json');
         echo json_encode($role);
     }
+
+    public function changeInfo() {
+        $id = $_GET['id'];
+        if (isset($_POST['Password']) && ($_POST['Password'] != "")) $data['Password'] = $_POST['Password'];
+        if (isset($_POST['Email']) && ($_POST['Email'] != "")) $data['Email'] = $_POST['Email'];
+        if (isset($_POST['Phone']) && ($_POST['Phone'] != "")) $data['Phone'] = $_POST['Phone'];
+        if (isset($_POST['Address']) && ($_POST['Address'] != "")) $data['Address'] = $_POST['Address'];
+        $this->model->mUpdate($id, $data);
+        header("Location: ../frontend/admin/?page=users");
+    }
 }

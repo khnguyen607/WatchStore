@@ -35,10 +35,10 @@ class OrderController extends BaseController
     {
         $data = [
             'TotalPrice'      => $_POST['TotalPrice'],
-            'GuestName'      => $_POST['guestName'],
-            'GuestEmail'      => $_POST['guestEmail'],
-            'GuestPhone'      => $_POST['guestPhone'],
-            'GuestAddress'      => $_POST['guestAddress'],
+            'GuestName'      => $_POST['GuestName'],
+            'GuestEmail'      => $_POST['GuestEmail'],
+            'GuestPhone'      => $_POST['GuestPhone'],
+            'GuestAddress'      => $_POST['GuestAddress'],
         ];
         $orderID = $this->model->mInsert($data);
         if(isset($_POST['userID'])) {
@@ -79,28 +79,7 @@ class OrderController extends BaseController
     public function changeStatus()
     {
         $id = $_GET['id'];
-        $currentStatus = $_GET['currentStatus'];
-        $newStaus = null;
-        switch ($currentStatus) {
-            case 'Chờ duyệt':
-                $newStaus = "Đã duyệt";
-                break;
-            case 'Đã duyệt':
-                $newStaus = "Đang giao hàng";
-                break;
-            case 'Đang giao hàng':
-                $newStaus = "Đã giao hàng";
-                break;
-            case 'Đã giao hàng':
-                $newStaus = "Đơn bị hủy";
-                break;
-            case 'Đơn bị hủy':
-                $newStaus = "Đang giao hàng";
-                break;
-            default:
-                # code...
-                break;
-        }
+        $newStaus = $_GET['newStaus'];
         $data = [
             "Status" => $newStaus
         ];

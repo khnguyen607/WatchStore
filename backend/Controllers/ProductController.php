@@ -34,7 +34,6 @@ class ProductController extends BaseController
             'Name'      => $_POST['Name'],
             'Price'      => $_POST['Price'],
             'Subtitle'  => $_POST['Subtitle'],
-            'Unit'       => $_POST['Unit'],
             'Description'  => $_POST['Description'],
             'Img'   => $this->saveFile()
         ];
@@ -46,15 +45,17 @@ class ProductController extends BaseController
     {
         $id = $_GET['id'];
         $data = [
-            'name'      => $_POST['name'],
-            'location'  => $_POST['location'],
-            'img'       => $_POST['img'],
-            'capacity'  => $_POST['capacity'],
-            'utility'   => $_POST['utility']
+            'Name'      => $_POST['Name'],
+            'Price'      => $_POST['Price'],
+            'Subtitle'  => $_POST['Subtitle'],
+            'Description'  => $_POST['Description'],
         ];
+        $Img = $this->saveFile();
+        if ($Img) {
+            $data["Img"] = $Img;
+        }
         $this->model->mUpdate($id, $data);
-
-        header("Location: ../frontend/dashboard.html?tab=mgr__room");
+        echo "true";
     }
 
     public function delete()
@@ -93,10 +94,10 @@ class ProductController extends BaseController
                 // Trả về đường dẫn của tệp tin đã được lưu
                 return substr($targetFilePath, 4);
             } else {
-                echo "Failed to upload file.";
+                // echo "Failed to upload file.";
             }
         } else {
-            echo "No file uploaded or invalid request.";
+            // echo "No file uploaded or invalid request.";
         }
         return null;
     }

@@ -26,6 +26,7 @@ class OrderModel extends BaseModel
 
     public function mDelete($id)
     {
+        $this->_deleteSyn($id);
         return $this->bmDelete(self::TABLE, $id);
     }
 
@@ -46,5 +47,10 @@ class OrderModel extends BaseModel
         }
 
         return $data;
+    }
+
+    private function _deleteSyn($id) {
+        $sql = "DELETE FROM `orderdetail` WHERE orderID = $id";
+        $this->_query($sql);
     }
 }

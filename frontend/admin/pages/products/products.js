@@ -23,6 +23,13 @@ async function showProducts(items) {
         cloneData.querySelector("img").src = Helper.getLink(item.Img)
         cloneData.querySelector("._productPrice").textContent = (item.Price * 1000).toLocaleString('vi-VN') + "₫"
         cloneData.querySelector("._productSubtitle").textContent = item.Subtitle
+        cloneData.querySelector(".item.trash").addEventListener('click', () => {
+            cloneData.classList.add("d-none")
+            Helper.fetchData("product&action=delete&id="+item.ID)
+        })
+        cloneData.querySelector(".item.edit").addEventListener('click', () => {
+            window.location.href="?page=productAdd&action=update&id="+item.ID
+        })
         dataList.appendChild(cloneData)
     });
     // filterBy()

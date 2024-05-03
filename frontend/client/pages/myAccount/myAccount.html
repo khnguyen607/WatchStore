@@ -100,28 +100,23 @@
                     <table class="table">
                       <thead>
                         <tr>
-                          <th>Order</th>
-                          <th>Date</th>
-                          <th>Status</th>
-                          <th>Total</th>
-                          <th>Actions</th>
+                          <th>Mã đơn hàng</th>
+                          <th>Ngày mua</th>
+                          <th>Trạng thái</th>
+                          <th>Tổng tiền</th>
+                          <!-- <th>Actions</th> -->
                         </tr>
                       </thead>
                       <tbody>
+
                         <tr>
-                          <td>1</td>
-                          <td>May 10, 2018</td>
-                          <td>Processing</td>
-                          <td>$25.00 for 1 item</td>
-                          <td><a href="cart.html" class="view">view</a></td>
+                          <td class="_orderID">1</td>
+                          <td class="_orderDate">May 10, 2018</td>
+                          <td class="_orderStatus">Processing</td>
+                          <td class="_orderTotalPrice">$25.00 for 1 item</td>
+                          <!-- <td class="_orderAction"><a href="cart.html" class="view">view</a></td> -->
                         </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>May 10, 2018</td>
-                          <td>Processing</td>
-                          <td>$17.00 for 1 item</td>
-                          <td><a href="cart.html" class="view">view</a></td>
-                        </tr>
+
                       </tbody>
                     </table>
                   </div>
@@ -143,9 +138,9 @@
                         <form action="#">
                           <div class="account-input-box">
                             <label>Số điện thoại</label>
-                            <input type="text" name="first-name" />
+                            <input type="text" name="Phone" />
                             <label>Email</label>
-                            <input type="text" name="email-name" />
+                            <input type="text" name="Email" />
                           </div>
                           <div class="custom-checkbox">
                             <input type="checkbox" id="_btnChangePassword" onchange="_hideChangePassword()"/>
@@ -153,7 +148,7 @@
                           </div>
                           <div class="my-1 d-none" id="_changePassword">
                             <label>Mật khẩu mới:</label>
-                            <input type="password" name="user-password" />
+                            <input type="text" name="Password" />
                           </div>
                           <script>
                             function _hideChangePassword() {

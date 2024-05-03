@@ -31,7 +31,7 @@ class OrderDetailModel extends BaseModel
 
     public function mGetOrderDetail($orderID)
     {
-        $sql = "SELECT orderDetail.*, products.Name, products.Price, products.Unit FROM `orderDetail` INNER JOIN products ON orderDetail.productID = products.ID WHERE orderDetail.orderID = $orderID";
+        $sql = "SELECT orderDetail.*, products.Name, products.Price, products.Img FROM `orderDetail` INNER JOIN products ON orderDetail.productID = products.ID WHERE orderDetail.orderID = $orderID";
         $query = $this->_query($sql);
         $data = [];
 
